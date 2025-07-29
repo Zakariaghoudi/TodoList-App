@@ -1,0 +1,28 @@
+.list-task-container {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 24px 20px 20px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-top: 20px;
+}
+
+.list-task-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.list-task-filters button {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 7px 18px;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.list-task-filters button:hover {
+  background: #125ea2;
+}
