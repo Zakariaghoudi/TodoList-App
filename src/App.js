@@ -6,7 +6,7 @@ import ListTask from './Components/ListTask';
 function App() {
   return (
     <div className="App">
-      <h1>My ToDo List</h1>
+      <h1>ToDo App</h1>
       <AddTask />
       <ListTask />
     </div>

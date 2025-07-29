@@ -1,11 +1,12 @@
 import "./Task.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteTask, toggleDone, editTask } from "../Redux/TodoSlice";
 
 function Task({ task }) {
   const dispatch = useDispatch();
   const [isEditing, setIsEditing] = useState(false);
+  const [newTitle, setNewTitle] = useState(task.title);
   const [newDescription, setNewDescription] = useState(task.description);
 
   const handleToggle = () => {
@@ -18,9 +19,18 @@ function Task({ task }) {
 
   const handleEdit = () => {
     if (isEditing) {
-      if (newDescription.trim() && newDescription.trim() !== task.description) {
+      if (
+        newTitle.trim() &&
+        newDescription.trim() &&
+        (newTitle.trim() !== task.title ||
+          newDescription.trim() !== task.description)
+      ) {
         dispatch(
-          editTask({ id: task.id, newDescription: newDescription.trim() })
+          editTask({
+            id: task.id,
+            title: newTitle.trim(),
+            newDescription: newDescription.trim(),
+          })
         );
       }
       setIsEditing(false);
@@ -32,20 +42,39 @@ function Task({ task }) {
   return (
     <div className={`task-item${task.isDone ? " done" : ""}`}>
       {isEditing ? (
-        <input
-          type="text"
-          value={newDescription}
-          onChange={(e) => setNewDescription(e.target.value)}
-        />
+        <>
+          <input
+            type="text"
+            value={newTitle}
+            onChange={(e) => setNewTitle(e.target.value)}
+            placeholder="Title"
+            className="task-title-input"
+          />
+          <input
+            type="text"
+            value={newDescription}
+            onChange={(e) => setNewDescription(e.target.value)}
+            placeholder="Description"
+            className="task-desc-input"
+          />
+        </>
       ) : (
-        <span className="task-desc">{task.description}</span>
+        <>
+          <h3
+            className="task-title"
+            style={{ fontWeight: 600, fontSize: "1.1em", marginRight: 10 }}
+          >
+            {task.title}
+          </h3>
+          <span className="task-desc">{task.description}</span>
+        </>
       )}
       <div className="task-actions">
         <button onClick={handleToggle}>{task.isDone ? "Undo" : "Done"}</button>
         <button className={isEditing ? "save" : "edit"} onClick={handleEdit}>
           {isEditing ? "Save" : "Edit"}
         </button>
-        <button onClick={handleDelete}>Delete</button>
+        <button onClick={handleDelete}>Del</button>
       </div>
     </div>
   );

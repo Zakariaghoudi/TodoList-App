@@ -19,6 +19,7 @@ function ListTask() {
 
   return (
     <div className="list-task-container">
+      <h1 className="todo-title">Tasks</h1>
       <div className="list-task-filters">
         <button onClick={() => dispatch(setFilterStatus("all"))}>All</button>
         <button onClick={() => dispatch(setFilterStatus("done"))}>Done</button>
