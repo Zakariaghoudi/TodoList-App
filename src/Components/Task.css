@@ -1,3 +1,43 @@
+@media (max-width: 900px) {
+  .task-item {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px 8px;
+  }
+  .task-content {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .task-actions {
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  .task-actions button {
+    width: 100%;
+    min-width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .task-item {
+    padding: 10px 2vw;
+  }
+  .task-title {
+    font-size: 1.05rem;
+  }
+  .task-desc {
+    font-size: 0.98rem;
+  }
+  .task-actions button {
+    font-size: 0.98rem;
+    min-width: 70px;
+    height: 36px;
+    padding: 0 8px;
+  }
+}
 /* Modern, animated todo item design */
 .task-item {
   display: flex;

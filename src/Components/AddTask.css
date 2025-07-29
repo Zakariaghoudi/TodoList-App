@@ -1,3 +1,32 @@
+@media (max-width: 900px) {
+  .add-task-form {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 8px;
+  }
+  .add-task-input {
+    font-size: 15px;
+    padding: 8px 10px;
+  }
+  .add-task-btn {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .add-task-form {
+    padding: 8px 2vw;
+  }
+  .add-task-input {
+    font-size: 14px;
+    padding: 7px 8px;
+  }
+  .add-task-btn {
+    font-size: 15px;
+    padding: 10px 0;
+  }
+}
 .add-task-form {
   display: flex;
   align-items: center;
