@@ -2,7 +2,7 @@ import "./Task.css";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteTask, toggleDone, editTask } from "../Redux/TodoSlice";
-
+import { FaCheckCircle, FaUndo, FaEdit, FaSave, FaTrash } from "react-icons/fa";
 function Task({ task }) {
   const dispatch = useDispatch();
   const [isEditing, setIsEditing] = useState(false);
@@ -11,7 +11,7 @@ function Task({ task }) {
 
   const handleToggle = () => {
     dispatch(toggleDone(task.id));
-  };
+  }
 
   const handleDelete = () => {
     dispatch(deleteTask(task.id));
@@ -40,7 +40,7 @@ function Task({ task }) {
   };
 
   return (
-    <div className={`task-item${task.isDone ? " done" : ""}`}>
+    <div className={`task-item${task.isDone ? " done" : ""}`} > 
       {isEditing ? (
         <>
           <input
@@ -70,11 +70,27 @@ function Task({ task }) {
         </>
       )}
       <div className="task-actions">
-        <button onClick={handleToggle}>{task.isDone ? "Undo" : "Done"}</button>
-        <button className={isEditing ? "save" : "edit"} onClick={handleEdit}>
-          {isEditing ? "Save" : "Edit"}
+        <button
+          className="icon-btn done"
+          onClick={handleToggle}
+          title={task.isDone ? "Undo" : "Done"}
+        >
+          {task.isDone ? <FaUndo /> : <FaCheckCircle />}
         </button>
-        <button onClick={handleDelete}>Del</button>
+        <button
+          className={`icon-btn ${isEditing ? "save" : "edit"}`}
+          onClick={handleEdit}
+          title={isEditing ? "Save" : "Edit"}
+        >
+          {isEditing ? <FaSave /> : <FaEdit />}
+        </button>
+        <button
+          className="icon-btn delete"
+          onClick={handleDelete}
+          title="Remove"
+        >
+          <FaTrash />
+        </button>
       </div>
     </div>
   );
