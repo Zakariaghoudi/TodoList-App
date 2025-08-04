@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# ToDo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple ToDo application built with React and Redux Toolkit.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+* **Add Tasks:** Users can add new tasks with a title and description.
+* **View Tasks:** All tasks are displayed in a list.
+* **Filter Tasks:** The task list can be filtered to show all tasks, only completed tasks ("Done"), or only incomplete tasks ("Not Done").
+* **State Management:** The application uses Redux for centralized state management of tasks.
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The project is organized into the following key directories:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `src/components/`
 
-### `npm test`
+This folder contains the UI components of the application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* `AddTask.js`: The component for the form used to add new tasks.
+* `ListTask.js`: The component responsible for displaying the list of tasks.
+* `Task.js`: The component for an individual task item within the list.
+* Corresponding `.css` files for each component (`AddTask.css`, `ListTask.css`, `Task.css`) handle the styling.
 
-### `npm run build`
+### `src/redux/`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This folder holds the Redux logic for state management.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* `Store.js`: Configures and sets up the Redux store for the application.
+* `TodoSlice.js`: A Redux "slice" that defines the initial state, reducers, and actions for managing the todo list.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
 
-### `npm run eject`
+* **React:** A JavaScript library for building user interfaces.
+* **Redux Toolkit:** The official, opinionated, batteries-included toolset for efficient Redux development.
+* **CSS:** Used for styling the application components.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Deployment
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The application is deployed and accessible at the following URL:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+[todolist-woad-seven.vercel.app](https://todolist-woad-seven.vercel.app)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Getting Started
 
-## Learn More
+To run this project locally, follow these steps:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/Zakariaghoudi/TodoList-App.git]
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2.  **Navigate to the project directory:**
+    ```bash
+    cd [project-folder]
+    ```
 
-### Code Splitting
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4.  **Run the application:**
+    ```bash
+    npm start
+    ```
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The app should now be running on `http://localhost:3000` in your web browser.
